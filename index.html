@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang=ja>
+<head>
+<meta charset="UTF-8">
+<style>
+body{background-image:url("bg.jpg");}
+body{font-family:"ヒラギノ角ゴ ProN","Yu Gothic Medium","游ゴシック Medium","メイリオ","MS Pゴシック";font-size:15px;color:#111;line-height:2;}
+body{padding-top:25px;padding-bottom:12em;}
+body{width:auto;text-align:left;}
+
+div.header,div.article,div.lmenu,div.main,div.rmenu,div.footer{padding:10px}
+div.body{margin:0 auto;background:#FDFDFF;width:86%;max-width:90em;min-width:60em;padding:20px 40px 30px}
+
+div.header{padding-bottom:0}
+h1, .title1{font-weight:bold;font-size:24px;margin-bottom:10px;margin-top:10px;line-height:1.4}
+.info{text-align:right;margin:0;font-size:15px;line-height:1.5}
+div.article{padding-top:2px}
+p{margin:0 0 18px}
+p.ud{margin:18px 0}
+p.u{margin:18px 0 0}
+p.n{margin:0}
+div.u{margin-top:18px}
+div.d{margin-bottom:18px}
+
+hr.ha{margin-bottom:0}
+hr.af{margin-bottom:1em}
+
+a{color:#006EFF;text-decoration:underline;cursor:pointer;}
+a:visited{color:#C46818}
+a:hover{color:#FF90D0}
+a:active{color:#FFD05B}
+
+label{margin-right:1em}
+table{margin-bottom:1em}
+td,th{padding:5px 15px;line-height:1.8}
+table.data{border-collapse:collapse}
+table.data td,th{font-size:13px;padding:1px 8px}
+
+div.lmenu{float:left;width:calc((100% - 4em) * 0.18);margin-top:24px;padding-left:0;padding-right:2em;font-size:15px;line-height:2;}
+div.main{float:left;width:calc((100% - 4em) * 0.64);padding-right:0;padding-left:0}
+div.rmenu{float:right;width:calc((100% - 4em)*0.18);margin-top:24px;padding-right:0;padding-left:2em;font-size:15px;line-height:2;}
+h2, .title2{font-weight:bold;font-size:21px;margin:25px 0 7px;line-height:1.5}
+h3, .title3{font-weight:bold;font-size:18px;margin:15px 0 7px;line-height:1.5}
+
+h1,h2,h3,div.title1,div.title2,div.title3{position:relative}
+h2::before, div.title2::before{background-color:#d6a2f8;content:' ';position:absolute;width:12px;height:12px;top:50%;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%) rotate(45deg);transform:translate(calc(-100% - 8px),  -50%) rotate(45deg);display:block;}
+h3::before, div.title3::before{background-color:#84aaf8;content:' ';position:absolute;width:10px;height:10px;border-radius:5px;top:50%;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%);transform:translate(calc(-100% - 7px),  -50%);display:block;}
+
+
+div.footer{font-size:15px;line-height:2;}
+ul{margin:0 0 18px;padding-left:28px}
+li{margin:8px 0;line-height:1.7;}
+ul.links li{margin:10px 0;line-height:1.6;}
+ul.u{margin:18px 0 0}
+ul.ud{margin:18px 0}
+ul.n{margin:0}
+img{width:400px;height:auto}
+
+li, .li{list-style:none;position:relative}
+li::before{content:' ';position:absolute;border-left:12px solid #88c9f8;border-top:6px solid transparent;border-bottom:6px solid transparent;top:0.85em;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%);transform:translate(calc(-100% - 9px),  -50%);display:block;}
+
+@media only screen and (max-device-width: 480px){
+div.article li::before{-webkit-transform:translate(calc(-100% - 8px),  calc(-50% + 7px));transform:translate(calc(-100% - 8px),  calc(-50% + 7px));}
+}
+
+.li::before{content:' ';position:absolute;border-left:10px solid #f8c185;border-top:5px solid transparent;border-bottom:5px solid transparent;top:50%;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%);transform:translate(calc(-100% - 8px),  -50%);display:block;}
+
+
+div.listt{text-indent:-1em;margin-left:1em}
+span.markk{display:inline-block;width:1em;text-indent:0}
+
+.bold{font-weight:bold}
+.underline{text-decoration:underline}
+.linethrough{text-decoration:line-through}
+.txleft{text-align:left}
+.txcenter{text-align:center}
+.txright{text-align:right}
+.red{color:crimson}
+.orange{color:coral}
+.green{color:forestgreen}
+.cyan{color:teal}
+.blue{color:mediumblue}
+.violet{color:darkviolet}
+.gray{color:darkgray}
+
+.mkred{background:linear-gradient(transparent 80%, #ffbad0 80%)}
+.mkblue{background:linear-gradient(transparent 80%, #b5deff 80%)}
+.mkgreen{background:linear-gradient(transparent 80%, #a0e8e6 80%)}
+
+.audiojs{height:24px;background:#CAF2E8;width:400px;}
+.audiojs .play-pause{width:15px;height:24px;padding:0px 8px 0px 0px;}
+.audiojs p{width:25px;height:20px;margin:-1px 0px 0px -1px;}
+.audiojs .scrubber{background:#9adaf3;width:60%;height:10px;text-align:center;margin:6px 3px 0px 5px;}
+.audiojs .progress{height:10px;width:0px;background:#4fb79b;}
+.audiojs .loaded{height:10px;background:#103148;}
+.audiojs .time{float:left;height:25px;line-height:25px;}
+.audiojs .error-message{height:24px;line-height:24px;}
+
+button{background:#D5EEFF; margin-right:0.5em; border-radius:3px; border-color:#D5EEFF;}
+button:hover{background:#E2F5FF; border-color:#E2F5FF;}
+button:active{background:#EEF9FF; border-color:#EEF9FF;}
+
+code{display:inline-block; font-size:14px; line-height:1.6; background:#CCCCD4; padding:1em 2em; font-family:"Consolas", "Menlo", "Monaco", "-apple-system", "BlinkMacSystemFont", "Meiryo", "monospace";}
+</style>
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+
+<style>
+div.main{float:left;width:calc((100% - 4em) * 0.8);padding-left:2em}
+</style>
+
+<title>カスタム聖遺物スコア計算機</title>
+</head>
+
+<body><script type="text/javascript" src="https://ad.netowl.jp/js/star-php.js"></script>
+<div class="body">
+
+<div class="main">
+<div class="header">
+<p class="title1">カスタム聖遺物スコア計算機</p>
+</div><!--header-end-->
+
+<hr class="ha">
+
+<div class="article">
+<style>
+td{padding:1px 8px}
+</style>
+<div class="title2">比重の設定</div>
+<ul>
+<li>あると嬉しいステータスにチェックを入れて、その嬉しさを基に比重を設定してください。</li>
+<li>嬉しいステータスは基本的に1で、あまり恩恵がないステータスだけ少し比重を下げる感じがおすすめです。（どれだけ恩恵があるかということだけで、バランスの問題はまだ考えない）</li>
+<li>「1」に設定すると会心ダメージ換算(最大伸びがスコア7.8)、「0.75」に設定すると攻撃力%換算(最大伸びがスコア5.8)になります。</li>
+<li>換算せずに%の数字をそのまま計算に入れる場合は()内の数字を入れてください。</li>
+<li>一般的な計算方法は 会心率1・会心ダメージ1・その他(攻撃%等)0.75 で再現できます。</li>
+</ul>
+<table>
+<tr>
+<td><input type="checkbox" name="include" value="cr" checked>会心率(0.5)</td>
+<td><input type="text" name="w_cr" size="3" value="1"></td>
+<td><input type="checkbox" name="include" value="cd" checked>会心ダメージ(1)</td>
+<td><input type="text" name="w_cd" size="3" value="1"></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="include" value="a1" checked>攻撃力%(0.75)</td>
+<td><input type="text" name="w_a1" size="3" value="0.75"></td>
+<td><input type="checkbox" name="include" value="a2">攻撃力+</td>
+<td><input type="text" name="w_a2" size="3" value="0"></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="include" value="h1">HP%(0.75)</td>
+<td><input type="text" name="w_h1" size="3" value="0.75"></td>
+<td><input type="checkbox" name="include" value="h2">HP+</td>
+<td><input type="text" name="w_h2" size="3" value="0"></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="include" value="d1">防御力%(0.9375)</td>
+<td><input type="text" name="w_d1" size="3" value="0.75"></td>
+<td><input type="checkbox" name="include" value="d2">防御力+</td>
+<td><input type="text" name="w_d2" size="3" value="0"></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="include" value="em">元素熟知</td>
+<td><input type="text" name="w_em" size="3" value="0.75"></td>
+<td><input type="checkbox" name="include" value="ec">元素ﾁｬｰｼﾞ効率(0.8333)</td>
+<td><input type="text" name="w_ec" size="3" value="0.75"></td>
+</tr>
+</table>
+<button class="plus">実数値(+)を%に換算して計算する</button><br>↑%の比重と基礎値を設定してから押してください（使わないステータスはデフォルトのままで大丈夫です）
+<table>
+<tr>
+<td>基礎HP</td>
+<td><input type="text" name="base_h" size="3" value="14000"></td>
+</tr>
+<tr>
+<td>基礎攻撃力</td>
+<td><input type="text" name="base_a" size="3" value="800"></td>
+</tr>
+<tr>
+<td>基礎防御力</td>
+<td><input type="text" name="base_d" size="3" value="800"></td>
+</tr>
+</table>
+<hr>
+
+<div class="title2">ステータスの入力</div>
+<div class="title3">生の花</div>
+<span class="orange">※枠内には数字のみ入力してください（％はなし）</span><br>
+メインステータス：HP+<br>
+追加ステータス：<br>
+<div class="sub_flw"></div>
+
+<div class="title3">死の羽</div>
+メインステータス：攻撃力+<br>
+追加ステータス：<br>
+<div class="sub_plm"></div>
+
+<div class="title3">時の砂</div>
+メインステータス：
+<select name="main_snd">
+<option value="a1">攻撃力%</option>
+<option value="h1">HP%</option>
+<option value="d1">防御力%</option>
+<option value="em">元素熟知</option>
+<option value="ec">元素チャージ効率</option>
+</select><br>
+追加ステータス：<br>
+<div class="sub_snd"></div>
+
+<div class="title3">空の杯</div>
+メインステータス：
+<select name="main_gbl">
+<option value="oth">炎元素ダメージ</option>
+<option value="oth">水元素ダメージ</option>
+<option value="oth">風元素ダメージ</option>
+<option value="oth">雷元素ダメージ</option>
+<option value="oth">草元素ダメージ</option>
+<option value="oth">氷元素ダメージ</option>
+<option value="oth">岩元素ダメージ</option>
+<option value="oth">物理ダメージ</option>
+<option value="a1">攻撃力%</option>
+<option value="h1">HP%</option>
+<option value="d1">防御力%</option>
+<option value="em">元素熟知</option>
+</select><br>
+追加ステータス：<br>
+<div class="sub_gbl"></div>
+
+<div class="title3">理の冠</div>
+メインステータス：
+<select name="main_cir">
+<option value="cr">会心率</option>
+<option value="cd">会心ダメージ</option>
+<option value="a1">攻撃力%</option>
+<option value="h1">HP%</option>
+<option value="d1">防御力%</option>
+<option value="em">元素熟知</option>
+<option value="oth">与える治療効果</option>
+</select><br>
+追加ステータス：<br>
+<div class="sub_cir"></div>
+
+<div class="txcenter"><label>＞＞＞＞＞＞＞＞<button class="calc">計算</button>＜＜＜＜＜＜＜＜</label></div>
+
+<div class="title2">結果</div>
+<div class="result"></div>
+<span class="orange">※小数の計算で誤差がある場合があります</span>
+
+<script>
+$(function(){
+$("button.plus").on("click", function(){
+let base_h = Number($('input[name="base_h"]').val());
+let base_a = Number($('input[name="base_a"]').val());
+let base_d = Number($('input[name="base_d"]').val());
+$('input[name="w_h2"]').val(Number($('input[name="w_h1"]').val()) * 77 / (base_h * 0.015));
+$('input[name="w_a2"]').val(Number($('input[name="w_a1"]').val()) * 5 / (base_a * 0.015));
+$('input[name="w_d2"]').val(Number($('input[name="w_d1"]').val()) * 6 / (base_d * 0.01875));
+}); //btn
+
+var atf = ["flw", "plm", "snd", "gbl", "cir"];
+var st_to_let = {"cr":"会心率", "cd":"会心ダメージ", "a1":"攻撃力%", "h1":"HP%", "d1":"防御力%", "em":"元素熟知", "ec":"元素チャージ効率", "a2":"攻撃力+", "h2":"HP+", "d2":"防御力+"};
+var st_to_mlt = {"cr":2, "cd":1, "a1":1.3333, "h1":1.3333, "d1":1.06667, "em":0.3333, "ec":1.2, "a2":0.4, "h2":0.02597, "d2":0.3333};
+
+function sub(a){
+let keys = Object.keys(st_to_let);
+let html = "<table>";
+for(let i=0; i<4; i++){
+html += '<tr><td><select name="sub_'+ a+String(i) +'">';
+keys.forEach(function(s){
+let slct = "";
+if(s == keys[i]){
+slct = "selected";
+} //if
+html += '<option value="'+ s +'" '+ slct +'>'+ st_to_let[s] +'</option>';
+}); //each
+html += '</select></td>';
+html += '<td><input type="text" name="sub_'+ a+String(i) +'" value="0" size="3"></td>';
+html += '<td><div class="sub_'+ a+String(i) +' red"></div></td></tr>';
+} //for
+html += '</table><div class="'+a+' red"></div>';
+$("div.sub_"+a).html(html);
+} //func sub
+
+function calc(){
+let check = $('input[name="include"]:checked').map(function(){
+return $(this).val();
+}).get();
+let result = [];
+let maxs = [];
+let rslt_txt = [];
+
+atf.forEach(function(a){
+let total = 0;
+for(let i=0; i<4; i++){
+let score = 0;
+let name = "sub_"+a+String(i);
+let sub = $('select[name="'+name+'"]').val();
+
+console.log(sub);
+console.log($('select[name="main_'+a+'"]').val());
+
+if(check.includes(sub) && sub != $('select[name="main_'+a+'"]').val()){
+score = Number($('input[name='+name+']').val()) * st_to_mlt[sub] * Number($('input[name="w_'+sub+'"]').val());
+total += score;
+} //if
+$('div.'+name).text(Math.round(score*10)/10);
+} //for
+result.push(total);
+
+let wei = check.filter(function(s){return s != $('select[name="main_'+a+'"]').val();});
+wei = wei.map(function(s){return $('input[name="w_'+s+'"]').val();});
+wei.sort(function(a,b){return b-a;});
+let max = 0;
+for(let i=0; i<Math.min(4, wei.length); i++){
+max += wei[i]*7.78;
+if(i==0){max += wei[i]*7.78*5;}
+} //for
+maxs.push(max);
+let txt = String(Math.round(total*10)/10)+" / "+String(Math.round(max*10)/10)+" ("+String(Math.round(total*1000/max)/10)+"%)";
+rslt_txt.push(txt);
+$('div.'+a).text("計："+txt);
+}); //each
+let final_txt = "生の花："+rslt_txt[0]+"<br>";
+final_txt += "死の羽："+rslt_txt[1]+"<br>";
+final_txt += "時の砂："+rslt_txt[2]+"<br>";
+final_txt += "空の杯："+rslt_txt[3]+"<br>";
+final_txt += "理の冠："+rslt_txt[4]+"<br>";
+
+total_score = Math.round(result.reduce((a,c) => a+c)*10)/10;
+total_max = Math.round(maxs.reduce((a,c) => a+c)*10)/10;
+total_per = Math.round(1000 * result.reduce((a,c) => a+c) / maxs.reduce((a,c) => a+c))/10
+
+final_txt += '<span class="red">合計：'+String(total_score)+" / "+String(total_max)+" ("+String(total_per)+"%)</span>"
+$("div.result").html(final_txt); 
+} //func calc
+
+atf.forEach(function(a){sub(a);});
+
+$('button.calc').on("click", function(){calc();});
+}); //jq
+</script></div><!--article-end-->
+</div><!--main-end-->
+
+<div style="clear:both;padding:0"></div><!--float-end-->
+
+</div><!--body-end-->
+</body>
