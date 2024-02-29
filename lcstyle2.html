@@ -1,0 +1,100 @@
+<style>
+body{background-image:url("bg.jpg");}
+body{font-family:"ヒラギノ角ゴ ProN","Yu Gothic Medium","游ゴシック Medium","メイリオ","MS Pゴシック";font-size:15px;color:#111;line-height:2;}
+body{padding-top:25px;padding-bottom:12em;}
+body{width:auto;text-align:left;}
+
+div.header,div.article,div.lmenu,div.main,div.rmenu,div.footer{padding:10px}
+div.body{margin:0 auto;background:#FDFDFF;width:86%;max-width:90em;min-width:60em;padding:20px 40px 30px}
+
+div.header{padding-bottom:0}
+h1, .title1{font-weight:bold;font-size:24px;margin-bottom:10px;margin-top:10px;line-height:1.4}
+.info{text-align:right;margin:0;font-size:15px;line-height:1.5}
+div.article{padding-top:2px}
+p{margin:0 0 18px}
+p.ud{margin:18px 0}
+p.u{margin:18px 0 0}
+p.n{margin:0}
+div.u{margin-top:18px}
+div.d{margin-bottom:18px}
+
+hr.ha{margin-bottom:0}
+hr.af{margin-bottom:1em}
+
+a{color:#006EFF;text-decoration:underline;cursor:pointer;}
+a:visited{color:#C46818}
+a:hover{color:#FF90D0}
+a:active{color:#FFD05B}
+
+label{margin-right:1em}
+table{margin-bottom:1em}
+td,th{padding:5px 15px;line-height:1.8}
+table.data{border-collapse:collapse}
+table.data td,th{font-size:13px;padding:1px 8px}
+
+div.lmenu{float:left;width:calc((100% - 4em) * 0.18);margin-top:24px;padding-left:0;padding-right:2em;font-size:15px;line-height:2;}
+div.main{float:left;width:calc((100% - 4em) * 0.64);padding-right:0;padding-left:0}
+div.rmenu{float:right;width:calc((100% - 4em)*0.18);margin-top:24px;padding-right:0;padding-left:2em;font-size:15px;line-height:2;}
+h2, .title2{font-weight:bold;font-size:21px;margin:25px 0 7px;line-height:1.5}
+h3, .title3{font-weight:bold;font-size:18px;margin:15px 0 7px;line-height:1.5}
+
+h1,h2,h3,div.title1,div.title2,div.title3{position:relative}
+h2::before, div.title2::before{background-color:#d6a2f8;content:' ';position:absolute;width:12px;height:12px;top:50%;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%) rotate(45deg);transform:translate(calc(-100% - 8px),  -50%) rotate(45deg);display:block;}
+h3::before, div.title3::before{background-color:#84aaf8;content:' ';position:absolute;width:10px;height:10px;border-radius:5px;top:50%;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%);transform:translate(calc(-100% - 7px),  -50%);display:block;}
+
+
+div.footer{font-size:15px;line-height:2;}
+ul{margin:0 0 18px;padding-left:28px}
+li{margin:8px 0;line-height:1.7;}
+ul.links li{margin:10px 0;line-height:1.6;}
+ul.u{margin:18px 0 0}
+ul.ud{margin:18px 0}
+ul.n{margin:0}
+img{width:400px;height:auto}
+
+li, .li{list-style:none;position:relative}
+li::before{content:' ';position:absolute;border-left:12px solid #88c9f8;border-top:6px solid transparent;border-bottom:6px solid transparent;top:0.85em;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%);transform:translate(calc(-100% - 9px),  -50%);display:block;}
+
+@media only screen and (max-device-width: 480px){
+div.article li::before{-webkit-transform:translate(calc(-100% - 8px),  calc(-50% + 7px));transform:translate(calc(-100% - 8px),  calc(-50% + 7px));}
+}
+
+.li::before{content:' ';position:absolute;border-left:10px solid #f8c185;border-top:5px solid transparent;border-bottom:5px solid transparent;top:50%;left:0;-webkit-transform:translate(calc(-100% - 8px),  -50%);transform:translate(calc(-100% - 8px),  -50%);display:block;}
+
+
+div.listt{text-indent:-1em;margin-left:1em}
+span.markk{display:inline-block;width:1em;text-indent:0}
+
+.bold{font-weight:bold}
+.underline{text-decoration:underline}
+.linethrough{text-decoration:line-through}
+.txleft{text-align:left}
+.txcenter{text-align:center}
+.txright{text-align:right}
+.red{color:crimson}
+.orange{color:coral}
+.green{color:forestgreen}
+.cyan{color:teal}
+.blue{color:mediumblue}
+.violet{color:darkviolet}
+.gray{color:darkgray}
+
+.mkred{background:linear-gradient(transparent 80%, #ffbad0 80%)}
+.mkblue{background:linear-gradient(transparent 80%, #b5deff 80%)}
+.mkgreen{background:linear-gradient(transparent 80%, #a0e8e6 80%)}
+
+.audiojs{height:24px;background:#CAF2E8;width:400px;}
+.audiojs .play-pause{width:15px;height:24px;padding:0px 8px 0px 0px;}
+.audiojs p{width:25px;height:20px;margin:-1px 0px 0px -1px;}
+.audiojs .scrubber{background:#9adaf3;width:60%;height:10px;text-align:center;margin:6px 3px 0px 5px;}
+.audiojs .progress{height:10px;width:0px;background:#4fb79b;}
+.audiojs .loaded{height:10px;background:#103148;}
+.audiojs .time{float:left;height:25px;line-height:25px;}
+.audiojs .error-message{height:24px;line-height:24px;}
+
+button{background:#D5EEFF; margin-right:0.5em; border-radius:3px; border-color:#D5EEFF;}
+button:hover{background:#E2F5FF; border-color:#E2F5FF;}
+button:active{background:#EEF9FF; border-color:#EEF9FF;}
+
+code{display:inline-block; font-size:14px; line-height:1.6; background:#CCCCD4; padding:1em 2em; font-family:"Consolas", "Menlo", "Monaco", "-apple-system", "BlinkMacSystemFont", "Meiryo", "monospace";}
+</style>
