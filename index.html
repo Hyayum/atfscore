@@ -304,7 +304,7 @@ let sub = $('select[name="'+name+'"]').val();
 console.log(sub);
 console.log($('select[name="main_'+a+'"]').val());
 
-if(check.includes(sub) && sub != $('select[name="main_'+a+'"]').val()){
+if(check.includes(sub)){
 score = Number($('input[name='+name+']').val()) * st_to_mlt[sub] * Number($('input[name="w_'+sub+'"]').val());
 total += score;
 } //if
